@@ -6,7 +6,7 @@
 /*   By: kuyu <kuyu@student.codam.nl>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/31 09:29:47 by kuyu              #+#    #+#             */
-/*   Updated: 2026/09/12 13:41:29 by kuyu             ###   ########.fr       */
+/*   Updated: 2026/09/12 15:35:05 by kuyu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,14 +97,14 @@ void	Bureaucrat::executeForm(AForm& form) const
 	{
 		form.execute(*this);
 		std::cout << _name
-				<< " signed "
+				<< " executed "
 				<< form.getName()
 				<< std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cout << _name
-				<< " couldn't execute"
+				<< " couldn't execute "
 				<< form.getName()
 				<< " because "
 				<< e.what()
