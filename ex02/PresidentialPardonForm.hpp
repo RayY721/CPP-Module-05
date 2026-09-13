@@ -6,7 +6,7 @@
 /*   By: kuyu <kuyu@student.codam.nl>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 16:35:47 by kuyu              #+#    #+#             */
-/*   Updated: 2026/09/12 13:42:14 by kuyu             ###   ########.fr       */
+/*   Updated: 2026/09/13 15:09:58 by kuyu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,13 @@ class PresidentialPardonForm : public AForm
 	private:
 		std::string	_target;
 
-	public:
-		PresidentialPardonForm(const std::string& target);
-
 		virtual void	executeAction() const;
+	public:
+		PresidentialPardonForm();
+		PresidentialPardonForm(const std::string& target);
+		PresidentialPardonForm(const PresidentialPardonForm& other);
+		PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
+		virtual	~PresidentialPardonForm();
 };
 
 #endif

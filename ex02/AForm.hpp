@@ -6,7 +6,7 @@
 /*   By: kuyu <kuyu@student.codam.nl>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 11:05:17 by kuyu              #+#    #+#             */
-/*   Updated: 2026/09/12 13:43:13 by kuyu             ###   ########.fr       */
+/*   Updated: 2026/09/13 15:04:14 by kuyu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class AForm
 		const int			_gradeToSign;
 		const int			_gradeToExecute;
 
+		virtual void		executeAction() const = 0;
 	public:
 		AForm();
 		AForm(const std::string& name, int signGrade, int executeGrade);
@@ -41,7 +42,6 @@ class AForm
 		void				beSigned(const Bureaucrat& bureaucrat);		// change the form's status to signed if the grade is high enough
 
 		void				execute(Bureaucrat const& executor) const;
-		virtual void		executeAction() const = 0;
 
 	class GradeTooHighException : public std::exception
 	{

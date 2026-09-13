@@ -6,7 +6,7 @@
 /*   By: kuyu <kuyu@student.codam.nl>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 16:41:05 by kuyu              #+#    #+#             */
-/*   Updated: 2026/09/08 12:58:42 by kuyu             ###   ########.fr       */
+/*   Updated: 2026/09/13 15:09:55 by kuyu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,13 @@ class RobotomyRequestForm : public AForm
 	private:
 		std::string	_target;
 
-	public:
-		RobotomyRequestForm(const std::string& target);
-
 		virtual void	executeAction() const;
+	public:
+		RobotomyRequestForm();
+		RobotomyRequestForm(const std::string& target);
+		RobotomyRequestForm(const RobotomyRequestForm& other);
+		RobotomyRequestForm&	operator=(const RobotomyRequestForm& other);
+		virtual	~RobotomyRequestForm();
 };
 
 #endif
