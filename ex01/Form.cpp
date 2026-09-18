@@ -6,7 +6,7 @@
 /*   By: kuyu <kuyu@student.codam.nl>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 11:05:15 by kuyu              #+#    #+#             */
-/*   Updated: 2026/09/04 11:36:22 by kuyu             ###   ########.fr       */
+/*   Updated: 2026/09/18 21:52:16 by kuyu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ Form::Form() : _name("Default"), _isSigned(false), _gradeToSign(1), _gradeToExec
 	
 }
 
-Form::Form(const std::string& name, int gradeToSign, int gradeToExecute) : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+Form::Form(const std::string& name, int gradeToSign, int gradeToExecute)
+	: _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw GradeTooHighException();
@@ -26,7 +27,8 @@ Form::Form(const std::string& name, int gradeToSign, int gradeToExecute) : _name
 		throw GradeTooLowException();
 }
 
-Form::Form(const Form& other) : _name(other._name), _isSigned(other._isSigned), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute)
+Form::Form(const Form& other)
+	: _name(other._name), _isSigned(other._isSigned), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute)
 {
 	
 }

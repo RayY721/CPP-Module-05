@@ -6,7 +6,7 @@
 /*   By: kuyu <kuyu@student.codam.nl>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/28 18:02:36 by kuyu              #+#    #+#             */
-/*   Updated: 2026/09/02 10:52:47 by kuyu             ###   ########.fr       */
+/*   Updated: 2026/09/18 21:50:31 by kuyu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ class Bureaucrat
 	class GradeTooLowException : public std::exception
 	{
 		// private by default, so need "public" to make it accessable
+		// what() musst be public so callers can access it
 		public:
 			virtual const char* what() const throw();
 	};
