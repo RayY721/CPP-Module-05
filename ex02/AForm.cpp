@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAForm.cpp                                          :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kuyu <kuyu@student.codam.nl>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 11:05:15 by kuyu              #+#    #+#             */
-/*   Updated: 2026/09/06 15:54:36 by kuyu             ###   ########.fr       */
+/*   Updated: 2026/09/20 00:34:24 by kuyu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ const char*	AForm::GradeTooLowException::what() const throw()
 
 const char* AForm::FormNotSignedException::what() const throw()
 {
-	return ("Form not been signed");
+	return ("Form has not been signed");
 }
 
 std::ostream&	operator<<(std::ostream& out, const AForm& Aform)

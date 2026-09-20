@@ -6,7 +6,7 @@
 /*   By: kuyu <kuyu@student.codam.nl>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 14:20:11 by kuyu              #+#    #+#             */
-/*   Updated: 2026/09/12 19:55:24 by kuyu             ###   ########.fr       */
+/*   Updated: 2026/09/20 08:59:19 by kuyu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ class Intern
 		Intern&	operator=(const Intern& other);
 		~Intern();
 		
-		AForm*	makeForm(const std::string& formName, const std::string& formTarget);
+		AForm*	makeForm(const std::string& formName,
+			const std::string& formTarget) const;
 };
 
 #endif

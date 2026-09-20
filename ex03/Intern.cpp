@@ -6,7 +6,7 @@
 /*   By: kuyu <kuyu@student.codam.nl>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 15:26:46 by kuyu              #+#    #+#             */
-/*   Updated: 2026/09/13 13:35:33 by kuyu             ###   ########.fr       */
+/*   Updated: 2026/09/20 08:59:29 by kuyu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include <iostream>
 
 Intern::Intern()
 {
@@ -52,7 +53,7 @@ AForm*	Intern::createPresidential(const std::string& target) const
 	return (new PresidentialPardonForm(target));
 }
 
-AForm*	Intern::makeForm(const std::string& formName, const std::string& formTarget)
+AForm*	Intern::makeForm(const std::string& formName, const std::string& formTarget) const
 {
 	std::string const formNames[3] = {
 		"shrubbery creation",

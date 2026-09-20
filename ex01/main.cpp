@@ -6,7 +6,7 @@
 /*   By: kuyu <kuyu@student.codam.nl>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 10:51:55 by kuyu              #+#    #+#             */
-/*   Updated: 2026/09/18 21:50:50 by kuyu             ###   ########.fr       */
+/*   Updated: 2026/09/20 09:46:13 by kuyu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int main()
 		std::cerr << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n===== Test 6: Bureaucrat grade higher than requirement =====" << std::endl;
+	std::cout << "\n===== Test 6: Bureaucrat has enough authority =====" << std::endl;
 	try
 	{
 		Bureaucrat	bob("bob", 42);
@@ -83,7 +83,7 @@ int main()
 		std::cerr << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n===== Test 7: Bureaucrat grade less than requirement =====" << std::endl;
+	std::cout << "\n===== Test 7: Bureaucrat does not have enough authority =====" << std::endl;
 	try
 	{
 		Bureaucrat	bob("bob", 42);
@@ -97,7 +97,7 @@ int main()
 		std::cerr << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n===== Test 8: Bureaucrat grade equals requirement =====" << std::endl;
+	std::cout << "\n===== Test 8: Bureaucrat exactly meets requirement =====" << std::endl;
 	try
 	{
 		Bureaucrat	bob("bob", 42);
@@ -123,6 +123,24 @@ int main()
 	catch(const std::exception& e)
 	{
 		std::cerr << "Exception: " << e.what() << std::endl;
+	}
+
+	std::cout << "\n===== Test 10: Direct beSigned exception test =====" << std::endl;
+	try
+	{
+		Bureaucrat	bob("Bob", 43);
+		Form		form("Application", 42, 70);
+
+		form.beSigned(bob);
+		std::cout << "[FAIL] Exception was expected" << std::endl;
+	}
+	catch (const Form::GradeTooLowException& e)
+	{
+		std::cout << "[PASS] Correct exception: " << e.what() << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << "[FAIL] Wrong exception: " << e.what() << std::endl;
 	}
 
 	return (0);
